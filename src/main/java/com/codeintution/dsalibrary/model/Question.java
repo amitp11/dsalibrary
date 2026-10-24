@@ -4,6 +4,8 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Data
 @Document(collection = "codingQuestions")
 public class Question {
@@ -14,6 +16,6 @@ public class Question {
     private String difficulty;
     private String solution;
     private String createdAt;
-    private String[] tags;
-    private String[] keywords;
+    private List<String> tags;
+    private List<String> keywords;
 }

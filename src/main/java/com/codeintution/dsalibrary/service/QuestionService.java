@@ -1,5 +1,6 @@
 package com.codeintution.dsalibrary.service;
 
+import com.codeintution.dsalibrary.dtos.QuestionResponse;
 import com.codeintution.dsalibrary.model.Question;
 import com.codeintution.dsalibrary.repository.QuestionRepository;
 import org.springframework.stereotype.Service;
@@ -18,8 +19,8 @@ public class QuestionService {
         return repo.save(q);
     }
 
-    public List<Question> getAll() {
-        return repo.findAll();
+    public List<QuestionResponse> getAll() {
+        return repo.findAll().stream().map(QuestionResponse::from).toList();
     }
 
     public Question getByCode(String code) {

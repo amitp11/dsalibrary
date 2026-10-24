@@ -1,5 +1,6 @@
 package com.codeintution.dsalibrary.controller;
 
+import com.codeintution.dsalibrary.dtos.QuestionResponse;
 import com.codeintution.dsalibrary.model.Question;
 import com.codeintution.dsalibrary.service.QuestionService;
 import org.springframework.http.ResponseEntity;
@@ -21,8 +22,8 @@ public class QuestionController {
         return service.save(q);
     }
 
-    @GetMapping
-    public List<Question> getAll() {
+    @GetMapping("/getAll")
+    public List<QuestionResponse> getAll() {
         return service.getAll();
     }
 
